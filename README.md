@@ -17,10 +17,7 @@ This project demonstrates **real-time control of four servo motors** using four 
 ---
 
 ## 📸 Demo video
-
-https://github.com/Safwan-Alemam/Arduino-servo-motor/issues/1#issue-3230749049
-
-
+https://github.com/user-attachments/assets/36af98b3-2837-49f1-b2b2-8ed5172e8967
 ---
 
 ## 💾 Full Arduino Code
