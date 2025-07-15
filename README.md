@@ -1,140 +1,123 @@
 # Arduino-servo-motor
 This project uses an **Arduino UNO** board to control **four servo motors** using **four push buttons** connected on a breadboard.
-# 🤖 Arduino-Based Multi-Servo Control System
 
-A compact and scalable servo motor control system built with **Arduino UNO**, designed to demonstrate real-time input/output interaction using hardware buttons. This project highlights key skills in embedded systems, circuit design, and C++ microcontroller programming — making it an excellent portfolio piece for roles in robotics, mechatronics, or automation.
+# 🤖 Arduino 4-Servo Motor Control with Push Buttons
 
----
-
-## 🧩 Project Overview
-
-This system controls **four servo motors** independently using **four push buttons**. Pressing any button will trigger its corresponding motor to rotate to a defined angle (e.g. 90°). Once released, the servo returns to its neutral position.
-
-> ⚡ This mimics real-world use cases like robotic joints, automated levers, or interactive mechanical systems.
+This project demonstrates **real-time control of four servo motors** using four push buttons and an Arduino UNO. It is ideal for learning, showcasing embedded systems skills, or building as a foundation for robotics projects.
 
 ---
 
-## 📦 Hardware Components
+## 📷 Circuit Diagram
 
-| Qty | Component                     | Notes                                      |
-|-----|-------------------------------|--------------------------------------------|
-| 1   | Arduino UNO                   | Microcontroller board                      |
-| 4   | SG90 Servo Motors             | PWM-based rotational actuators             |
-| 4   | Push Buttons                  | Used as input switches                     |
-| 4   | 10kΩ Resistors                | For stable digital input via pull-up       |
-| 1   | Breadboard + Jumper Wires     | Circuit prototyping and connections        |
-| 1   | 5V External Power Supply (2A) | Recommended for simultaneous servo use     |
-| 1   | 100μF Capacitor (Optional)    | Helps smooth power delivery to servos      |
+![Circuit Diagram](./arduino-servo.png)
 
 ---
 
-## 🛠️ Tools & Libraries
+## 🎥 Demo Video
 
-- Arduino IDE (v2.x recommended)
-- Built-in `Servo.h` library
-- Tinkercad (or Fritzing) for circuit simulation and diagramming
+> GitHub does not support direct playback of `.mp4` files online.  
+> To view the demonstration, **[download and play the video](./demo.mp4)** locally.
+
+Or, if you upload the video to YouTube, you can embed it like this:
+```
+[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
+```
+Replace `YOUR_VIDEO_ID` with your actual video link.
 
 ---
 
-## ⚙️ System Behavior & Logic
-
-The system follows a **modular input/output model**:
-
-- Each push button is connected to a digital input using `INPUT_PULLUP` mode.
-- Each servo is connected to a PWM-compatible digital output (Pins 6–9).
-- When a button is pressed, the microcontroller writes a **90° angle** to the respective servo.
-- Releasing the button sends the servo back to **0°** (default rest position).
-
-This ensures responsive, real-time actuation and can be expanded to include sensors or communication modules.
-
-### 🧠 Control Logic Flow
+## 💾 Full Arduino Code
 
 ```cpp
-if (digitalRead(buttonPin) == LOW) {
-  servo.write(90);  // Rotate servo
-} else {
-  servo.write(0);   // Reset position
+#include <Servo.h>
+
+Servo myservo1;
+Servo myservo2;
+Servo myservo3;
+Servo myservo4;
+
+int button1 = 2;
+int button2 = 3;
+int button3 = 4;
+int button4 = 5;
+
+void setup() {
+  myservo1.attach(6);
+  myservo2.attach(7);
+  myservo3.attach(8);
+  myservo4.attach(9);
+
+  pinMode(button1, INPUT_PULLUP);
+  pinMode(button2, INPUT_PULLUP);
+  pinMode(button3, INPUT_PULLUP);
+  pinMode(button4, INPUT_PULLUP);
+}
+
+void loop() {
+  if (digitalRead(button1) == LOW) {
+    myservo1.write(90);
+  } else {
+    myservo1.write(0);
+  }
+
+  if (digitalRead(button2) == LOW) {
+    myservo2.write(90);
+  } else {
+    myservo2.write(0);
+  }
+
+  if (digitalRead(button3) == LOW) {
+    myservo3.write(90);
+  } else {
+    myservo3.write(0);
+  }
+
+  if (digitalRead(button4) == LOW) {
+    myservo4.write(90);
+  } else {
+    myservo4.write(0);
+  }
 }
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🧰 Components Used
 
-### 🖇️ Hardware Setup
-1. Connect each servo's signal pin to pins 6, 7, 8, and 9.
-2. Connect buttons to pins 2, 3, 4, and 5.
-3. Connect servo power lines to 5V (preferably via an external supply).
-4. Add pull-down resistors or use `INPUT_PULLUP` in code.
+| Qty | Part                 |
+|-----|----------------------|
+| 1   | Arduino UNO R3       |
+| 4   | SG90 Servo Motors    |
+| 4   | Push Buttons         |
+| 4   | 10kΩ Resistors       |
+| 1   | Breadboard & Wires   |
+| 1   | 5V Power Supply*     |
 
-### 💻 Software Upload
-1. Open Arduino IDE.
-2. Paste the code or use the provided file.
-3. Select the correct board and port.
-4. Upload the code and test each button.
-
----
-
-## 💾 Source Code
-
-🔗 [View the full Arduino code here](https://github.com/Safwan-Aleman/Arduino-servo-motor/blob/main/Servo-code/Servo-code.ino)
+*Use an external 5V supply if running all servos at once for best results.
 
 ---
 
-## 🎯 Project Highlights
+## 🚀 How It Works
 
-- ✅ Real-time digital input processing  
-- ✅ PWM-based servo motor control  
-- ✅ Clean modular hardware layout  
-- ✅ Built-in debounce using `INPUT_PULLUP`  
-- ✅ Expandable to 6+ servos or sensor-based input  
-
----
-
-## 🖼️ Circuit Diagram
-
-![Circuit Diagram](showcase/demo-circuit.png)
+- Each push button is connected to an Arduino digital input pin (`2`, `3`, `4`, `5`) using the internal pull-up resistor.
+- Each servo's signal wire is attached to a PWM pin (`6`, `7`, `8`, `9`).
+- Pressing a button moves its corresponding servo to **90°**; releasing returns it to **0°**.
+- The design is modular and easy to expand for more servos or sensors.
 
 ---
 
-
-## 🎥 Demo Video
-
-[Download demo video](showcase/Arduino-servo-test.mp4)
-
----
-
-## 📁 Folder Structure
+## 📁 Repo Structure
 
 ```
-project-root/
-├── showcase/
-│   ├── demo-circuit.png
-│   └── demo.mp4
-├── Servo-code/
-│   └── Servo-code.ino
-└── README.md
+.
+├── arduino-servo.png     # Circuit diagram image
+├── demo.mp4              # Project demo video
+├── Servo-code.ino        # Full Arduino source code
+└── README.md             # This file
 ```
-
 ---
-
-## 🧠 Skills You Demonstrate
-
-- Embedded C++ (Arduino)
-- Hardware-software integration
-- PWM signal control
-- Real-time event handling
-- Circuit design and simulation
-- Portfolio documentation & clarity
-
----
-
 
 ## 👤 Author
 
 **Your Name Here**  
-GitHub: [@Safwan-Aleman](https://github.com/Safwan-Aleman)  
-
----
-
-> ✅ *Ready for interviews. Ready for GitHub. Ready to impress.*
+GitHub: [Safwan Alimam)  
