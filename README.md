@@ -93,13 +93,14 @@ if (digitalRead(buttonPin) == LOW) {
 
 ## 🖼️ Circuit Diagram
 
-<img src="showcase/demo-circuit.png" alt="Circuit Diagram" style="max-width: 100%;">
+![Circuit Diagram](showcase/demo-circuit.png)
 
 ---
 
+
 ## 🎥 Demo Video
 
-<img src="showcase/demo-circuit.png" alt="Circuit Diagram" style="max-width: 100%;">
+[Download demo video](showcase/Arduino-servo-test.mp4)
 
 ---
 
