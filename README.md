@@ -93,13 +93,13 @@ if (digitalRead(buttonPin) == LOW) {
 
 ## 🖼️ Circuit Diagram
 
-![Circuit Diagram](./showcase/demo-circuit.png)
+<img src="showcase/demo-circuit.png" alt="Circuit Diagram" style="max-width: 100%;">
 
 ---
 
 ## 🎥 Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
+<video src="showcase/Arduino-servo-test.mp4" controls width="100%"></video>
 
 > Replace `YOUR_VIDEO_ID` with your actual YouTube video ID.
 
