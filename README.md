@@ -15,14 +15,7 @@ This project demonstrates **real-time control of four servo motors** using four 
 
 ## 🎥 Demo Video
 
-> GitHub does not support direct playback of `.mp4` files online.  
-> To view the demonstration, **[download and play the video](./demo.mp4)** locally.
-
-Or, if you upload the video to YouTube, you can embed it like this:
-```
-[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
-```
-Replace `YOUR_VIDEO_ID` with your actual video link.
+[![Demo Video](https://img.youtube.com/vi/6utqb4K-8Sk/0.jpg)](https://youtu.be/6utqb4K-8Sk)
 
 ---
 
