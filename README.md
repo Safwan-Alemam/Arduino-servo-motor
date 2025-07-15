@@ -112,5 +112,4 @@ void loop() {
 
 ## 👤 Author
 
-**Your Name Here**  
-GitHub: [Safwan Alimam)  
+**Safwan Alimam**  
