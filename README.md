@@ -99,9 +99,7 @@ if (digitalRead(buttonPin) == LOW) {
 
 ## 🎥 Demo Video
 
-<video src="showcase/Arduino-servo-test.mp4" controls width="100%"></video>
-
-> Replace `YOUR_VIDEO_ID` with your actual YouTube video ID.
+<img src="showcase/demo-circuit.png" alt="Circuit Diagram" style="max-width: 100%;">
 
 ---
 
