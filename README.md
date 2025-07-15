@@ -9,7 +9,7 @@ This project demonstrates **real-time control of four servo motors** using four 
 
 ## 📷 Circuit Diagram
 
-![Circuit Diagram](./arduino-servo.png)
+![Circuit Diagram](showcase/arduino-servo.png)
 
 ---
 
